@@ -3,26 +3,41 @@
 # GitHub: https://github.com/dereknguyen269
 
 class NewBlockLetter
- def initialize
-   @contents = []
- end
- def contents
-   @contents
- end
+  def initialize
+    @contents = []
+  end
+  def contents
+    @contents
+  end
 end
 
 def draw(str)
-       count = str.size
-       y = 0
-       while y <= 5 do
-              text = ''
-              (0...count).each do |x|
-                     key = str[x] == " " ? :space : str[x].downcase.to_sym
-                     text += "#{BlockLetterMap[key].contents[y]}"
-              end
-              STDERR.puts text
-              y += 1
-       end
+  count = str.size
+  y = 0
+
+  while y <= 5 do
+    text = ''
+    (0...count).each do |x|
+
+      case str[x]
+        when " " then key = :space
+        when "!" then key = :exclamation
+        when "-" then key = :hyphen
+        when "_" then key = :underscore
+        when "#" then key = :hash
+        when "?" then key = :question
+        when "$" then key = :dollar
+        when "%" then key = :percent
+        when "*" then key = :star
+        when "^" then key = :caret
+        else          key = str[x].downcase.to_sym
+      end
+
+      text += "#{BlockLetterMap[key].contents[y]}"
+    end
+    STDERR.puts text
+    y += 1
+  end
 end
 
 BlockLetterMap = {}
@@ -270,9 +285,72 @@ space.contents[4] =  "      "
 space.contents[5] =  "      "
 BlockLetterMap[:space] = space
 
+exclamation = NewBlockLetter.new
+exclamation.contents[0] =  "______ "
+exclamation.contents[1] =  "\\    / "
+exclamation.contents[2] =  " \\  /  "
+exclamation.contents[3] =  "  \\/   "
+exclamation.contents[4] =  "       "
+exclamation.contents[5] =  "  []   "
+BlockLetterMap[:exclamation] = exclamation
+
+hyphen = NewBlockLetter.new
+hyphen.contents[0] =  "        "
+hyphen.contents[1] =  "        "
+hyphen.contents[2] =  "======= "
+hyphen.contents[3] =  "======= "
+hyphen.contents[4] =  "        "
+hyphen.contents[5] =  "        "
+BlockLetterMap[:hyphen] = hyphen
+
+underscore = NewBlockLetter.new
+underscore.contents[0] =  "        "
+underscore.contents[1] =  "        "
+underscore.contents[2] =  "        "
+underscore.contents[3] =  "        "
+underscore.contents[4] =  "        "
+underscore.contents[5] =  "======= "
+BlockLetterMap[:underscore] = underscore
+
+hash = NewBlockLetter.new
+hash.contents[0] =  "        "
+hash.contents[1] =  " || ||  "
+hash.contents[2] =  "=|| ||= "
+hash.contents[3] =  "=|| ||= "
+hash.contents[4] =  " || ||  "
+hash.contents[5] =  "        "
+BlockLetterMap[:hash] = hash
+
+question = NewBlockLetter.new
+question.contents[0] =  " ___   "
+question.contents[1] =  "|__  \\ "
+question.contents[2] =  "   ) | "
+question.contents[3] =  "  / /  "
+question.contents[4] =  " |_|   "
+question.contents[5] =  " (_)   "
+BlockLetterMap[:question] = question
+
+star = NewBlockLetter.new
+star.contents[0] =  "    _     "
+star.contents[1] =  " /\\| |/\\  "
+star.contents[2] =  " \\ | | /  "
+star.contents[3] =  "|_     _| "
+star.contents[4] =  " / | | \\  "
+star.contents[5] =  " \\/|_|\\/  "
+BlockLetterMap[:star] = star
+
+caret = NewBlockLetter.new
+caret.contents[0] =  "   _    "
+caret.contents[1] =  "  /_\\   "
+caret.contents[2] =  " // \\\\  "
+caret.contents[3] =  "|/   \\| "
+caret.contents[4] =  "        "
+caret.contents[5] =  "        "
+BlockLetterMap[:caret] = caret
+
 if ARGV.count.zero?
-       str = "Ruby Letters"
-       draw(str)
+  str = "Ruby Letters"
+  draw(str)
 else
-       ARGV.each {|input| draw(input) }
+  ARGV.each {|input| draw(input) }
 end
