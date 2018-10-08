@@ -1,8 +1,7 @@
-ruby_letters
+## Ruby_Letters
 
 ```bash
   cd ruby_letters
   ruby letters "Hello World"
 ```
-
-[Imgur](https://i.imgur.com/a0NgI9W.gifv)
+![](./demo.png)
