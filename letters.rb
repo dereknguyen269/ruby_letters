@@ -486,6 +486,14 @@ not_sign.contents[4] = "     |_|"
 not_sign.contents[5] = "        "
 BlockLetterMap[:not_sign] = not_sign
 
+ñ = NewBlockLetter.new
+ñ.contents[0] =  " __━━━━_  "
+ñ.contents[1] =  "|  \\  | | "
+ñ.contents[2] =  "| \\ \\ | | "
+ñ.contents[3] =  "| |\\ \\| | "
+ñ.contents[4] =  "| | \\ \\ | "
+ñ.contents[5] =  "|_|  \\__| "
+BlockLetterMap[:ñ] = ñ
 if ARGV.count.zero?
   str = "Ruby Letters"
   draw(str)
