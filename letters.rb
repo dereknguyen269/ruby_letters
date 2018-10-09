@@ -22,7 +22,9 @@ def draw(str)
       case str[x]
         when " " then key = :space
         when "!" then key = :exclamation
+        when "." then key = :period
         when "-" then key = :hyphen
+        when "+" then key = :plus
         when "_" then key = :underscore
         when "@" then key = :at
         when "#" then key = :hash
@@ -34,6 +36,8 @@ def draw(str)
         when ">" then key = :chevron_right
         when "<" then key = :chevron_left
         when "%" then key = :percent
+        when "(" then key = :open_parenthesis
+        when ")" then key = :closed_parenthesis
         else          key = str[x].downcase.to_sym
       end
 
@@ -298,6 +302,15 @@ exclamation.contents[4] =  "       "
 exclamation.contents[5] =  "  []   "
 BlockLetterMap[:exclamation] = exclamation
 
+period = NewBlockLetter.new
+period.contents[0] = "        "
+period.contents[1] = "        "
+period.contents[2] = "        "
+period.contents[3] = "        "
+period.contents[4] = "   __   "
+period.contents[5] = "  |__|  "
+BlockLetterMap[:period] = period
+
 hyphen = NewBlockLetter.new
 hyphen.contents[0] =  "        "
 hyphen.contents[1] =  "        "
@@ -306,6 +319,15 @@ hyphen.contents[3] =  "|______|"
 hyphen.contents[4] =  "        "
 hyphen.contents[5] =  "        "
 BlockLetterMap[:hyphen] = hyphen
+
+plus = NewBlockLetter.new
+plus.contents[0] =  "          "
+plus.contents[1] =  "    __    "
+plus.contents[2] =  "  _|  |_  "
+plus.contents[3] =  " |__  __| "
+plus.contents[4] =  "   |__|   "
+plus.contents[5] =  "          "
+BlockLetterMap[:plus] = plus
 
 underscore = NewBlockLetter.new
 underscore.contents[0] =  "        "
@@ -396,6 +418,24 @@ at.contents[3] = "  |  |  /  |  "
 at.contents[4] = "  |  \\____/   "
 at.contents[5] = "   \\______|   "
 BlockLetterMap[:at] = at
+          
+open_parenthesis = NewBlockLetter.new
+open_parenthesis.contents[0] = "    /   "
+open_parenthesis.contents[1] = "   /    "
+open_parenthesis.contents[2] = "  |     "
+open_parenthesis.contents[3] = "  |     "
+open_parenthesis.contents[4] = "   \\    "
+open_parenthesis.contents[5] = "    \\   "
+BlockLetterMap[:open_parenthesis] = open_parenthesis
+
+closed_parenthesis = NewBlockLetter.new
+closed_parenthesis.contents[0] = "   \\   "
+closed_parenthesis.contents[1] = "    \\  "
+closed_parenthesis.contents[2] = "     | "
+closed_parenthesis.contents[3] = "     | "
+closed_parenthesis.contents[4] = "    /  "
+closed_parenthesis.contents[5] = "   /   "
+BlockLetterMap[:closed_parenthesis] = closed_parenthesis
 
 if ARGV.count.zero?
   str = "Ruby Letters"
