@@ -24,6 +24,7 @@ def draw(str)
         when "!" then key = :exclamation
         when "-" then key = :hyphen
         when "_" then key = :underscore
+        when "@" then key = :at
         when "#" then key = :hash
         when "?" then key = :question
         when "$" then key = :dollar
@@ -355,11 +356,11 @@ dollar = NewBlockLetter.new
 dollar.contents[0] = "   _    "
 dollar.contents[1] = "  | |   "
 dollar.contents[2] = " / __)  "
-dollar.contents[3] = " \\__ \\  "    
+dollar.contents[3] = " \\__ \\  "
 dollar.contents[4] = " (   /  "
 dollar.contents[5] = "  |_|   "
 BlockLetterMap[:dollar] = dollar
-          
+
 chevron_right = NewBlockLetter.new
 chevron_right.contents[0] =  "  ___     "
 chevron_right.contents[1] =  "  \\  \\    "
@@ -377,7 +378,7 @@ chevron_left.contents[3] =  "  \\ 〈    "
 chevron_left.contents[4] =  "   \\  \\   "
 chevron_left.contents[5] =  "    \\__\\  "
 BlockLetterMap[:chevron_left] = chevron_left
-          
+
 percent = NewBlockLetter.new
 percent.contents[0] =  "  ___   ___    "
 percent.contents[1] =  "  \\__\\ /  /    "
@@ -386,6 +387,15 @@ percent.contents[3] =  "     /  /      "
 percent.contents[4] =  "    /  / ___   "
 percent.contents[5] =  "   /__/  \\__\\  "
 BlockLetterMap[:percent] = percent
+
+at = NewBlockLetter.new
+at.contents[0] = "    ______    "
+at.contents[1] = "   /  __  \\   "
+at.contents[2] = "  |  /  |  |  "
+at.contents[3] = "  |  |  /  |  "
+at.contents[4] = "  |  \\____/   "
+at.contents[5] = "   \\______|   "
+BlockLetterMap[:at] = at
 
 if ARGV.count.zero?
   str = "Ruby Letters"
