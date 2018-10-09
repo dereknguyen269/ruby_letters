@@ -37,6 +37,8 @@ def draw(str)
         when "%" then key = :percent
         when "(" then key = :open_parenthesis
         when ")" then key = :closed_parenthesis
+        when "{" then key = :opening_curly_braces
+        when "}" then key = :closed_curly_braces
         else          key = str[x].downcase.to_sym
       end
 
@@ -435,6 +437,25 @@ closed_parenthesis.contents[3] = "     | "
 closed_parenthesis.contents[4] = "    /  "
 closed_parenthesis.contents[5] = "   /   "
 BlockLetterMap[:closed_parenthesis] = closed_parenthesis
+
+opening_curly_braces = NewBlockLetter.new
+opening_curly_braces.contents[0] = "   -   "
+opening_curly_braces.contents[1] = "  |    "
+opening_curly_braces.contents[2] = " /     "
+opening_curly_braces.contents[3] = " \\     "
+opening_curly_braces.contents[4] = "  |    "
+opening_curly_braces.contents[5] = "   -   "
+BlockLetterMap[:opening_curly_braces] = opening_curly_braces
+
+closed_curly_braces = NewBlockLetter.new
+closed_curly_braces.contents[0] = "   -   "
+closed_curly_braces.contents[1] = "     | "
+closed_curly_braces.contents[2] = "     \\ "
+closed_curly_braces.contents[3] = "     / "
+closed_curly_braces.contents[4] = "    |  "
+closed_curly_braces.contents[5] = "   -   "
+BlockLetterMap[:closed_curly_braces] = closed_curly_braces
+
 
 if ARGV.count.zero?
   str = "Ruby Letters"
