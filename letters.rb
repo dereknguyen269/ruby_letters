@@ -22,6 +22,7 @@ def draw(str)
       case str[x]
         when " " then key = :space
         when "!" then key = :exclamation
+        when "." then key = :period
         when "-" then key = :hyphen
         when "_" then key = :underscore
         when "#" then key = :hash
@@ -297,6 +298,15 @@ exclamation.contents[4] =  "       "
 exclamation.contents[5] =  "  []   "
 BlockLetterMap[:exclamation] = exclamation
 
+period = NewBlockLetter.new
+period.contents[0] = "        "
+period.contents[1] = "        "
+period.contents[2] = "        "
+period.contents[3] = "        "
+period.contents[4] = "   __   "
+period.contents[5] = "  |__|  "
+BlockLetterMap[:period] = period
+
 hyphen = NewBlockLetter.new
 hyphen.contents[0] =  "        "
 hyphen.contents[1] =  "        "
@@ -355,11 +365,11 @@ dollar = NewBlockLetter.new
 dollar.contents[0] = "   _    "
 dollar.contents[1] = "  | |   "
 dollar.contents[2] = " / __)  "
-dollar.contents[3] = " \\__ \\  "    
+dollar.contents[3] = " \\__ \\  "
 dollar.contents[4] = " (   /  "
 dollar.contents[5] = "  |_|   "
 BlockLetterMap[:dollar] = dollar
-          
+
 chevron_right = NewBlockLetter.new
 chevron_right.contents[0] =  "  ___     "
 chevron_right.contents[1] =  "  \\  \\    "
@@ -377,7 +387,7 @@ chevron_left.contents[3] =  "  \\ 〈    "
 chevron_left.contents[4] =  "   \\  \\   "
 chevron_left.contents[5] =  "    \\__\\  "
 BlockLetterMap[:chevron_left] = chevron_left
-          
+
 percent = NewBlockLetter.new
 percent.contents[0] =  "  ___   ___    "
 percent.contents[1] =  "  \\__\\ /  /    "
