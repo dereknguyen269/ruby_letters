@@ -23,6 +23,7 @@ def draw(str)
         when " " then key = :space
         when "!" then key = :exclamation
         when "-" then key = :hyphen
+        when "+" then key = :plus
         when "_" then key = :underscore
         when "#" then key = :hash
         when "?" then key = :question
@@ -306,6 +307,15 @@ hyphen.contents[4] =  "        "
 hyphen.contents[5] =  "        "
 BlockLetterMap[:hyphen] = hyphen
 
+plus = NewBlockLetter.new
+plus.contents[0] =  "          "
+plus.contents[1] =  "    __    "
+plus.contents[2] =  "  _|  |_  "
+plus.contents[3] =  " |__  __| "
+plus.contents[4] =  "   |__|   "
+plus.contents[5] =  "          "
+BlockLetterMap[:plus] = plus
+
 underscore = NewBlockLetter.new
 underscore.contents[0] =  "        "
 underscore.contents[1] =  "        "
@@ -355,11 +365,11 @@ dollar = NewBlockLetter.new
 dollar.contents[0] = "   _    "
 dollar.contents[1] = "  | |   "
 dollar.contents[2] = " / __)  "
-dollar.contents[3] = " \\__ \\  "    
+dollar.contents[3] = " \\__ \\  "
 dollar.contents[4] = " (   /  "
 dollar.contents[5] = "  |_|   "
 BlockLetterMap[:dollar] = dollar
-          
+
 chevron_right = NewBlockLetter.new
 chevron_right.contents[0] =  "  ___     "
 chevron_right.contents[1] =  "  \\  \\    "
@@ -377,7 +387,7 @@ chevron_left.contents[3] =  "  \\ 〈    "
 chevron_left.contents[4] =  "   \\  \\   "
 chevron_left.contents[5] =  "    \\__\\  "
 BlockLetterMap[:chevron_left] = chevron_left
-          
+
 percent = NewBlockLetter.new
 percent.contents[0] =  "  ___   ___    "
 percent.contents[1] =  "  \\__\\ /  /    "
