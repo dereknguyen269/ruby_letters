@@ -348,6 +348,15 @@ caret.contents[4] =  "        "
 caret.contents[5] =  "        "
 BlockLetterMap[:caret] = caret
 
+dollar = NewBlockLetter.new
+dollar.contents[0] = "   _    "
+dollar.contents[1] = "  | |   "
+dollar.contents[2] = " / __)  "
+dollar.contents[3] = " \\__ \\  "    
+dollar.contents[4] = " (   /  "
+dollar.contents[5] = "  |_|   "
+BlockLetterMap[:dollar] = dollar
+
 if ARGV.count.zero?
   str = "Ruby Letters"
   draw(str)
