@@ -24,6 +24,7 @@ def draw(str)
         when "." then key = :period
         when "-" then key = :hyphen
         when "+" then key = :plus
+		when "=" then key = :equal
         when "_" then key = :underscore
         when "@" then key = :at
         when "#" then key = :hash
@@ -329,6 +330,15 @@ plus.contents[3] =  " |__  __| "
 plus.contents[4] =  "   |__|   "
 plus.contents[5] =  "          "
 BlockLetterMap[:plus] = plus
+
+equal = NewBlockLetter.new
+equal.contents[0] =  "          "
+equal.contents[1] =  "          "
+equal.contents[2] =  " ________ "
+equal.contents[3] =  " ________ "
+equal.contents[4] =  "          "
+equal.contents[5] =  "          "
+BlockLetterMap[:equal] = equal
 
 underscore = NewBlockLetter.new
 underscore.contents[0] =  "        "
