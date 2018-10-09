@@ -30,6 +30,8 @@ def draw(str)
         when "%" then key = :percent
         when "*" then key = :star
         when "^" then key = :caret
+        when ">" then key = :chevron_right
+        when "<" then key = :chevron_left
         when "%" then key = :percent
         else          key = str[x].downcase.to_sym
       end
@@ -349,6 +351,24 @@ caret.contents[4] =  "        "
 caret.contents[5] =  "        "
 BlockLetterMap[:caret] = caret
 
+chevron_right = NewBlockLetter.new
+chevron_right.contents[0] =  "  ___     "
+chevron_right.contents[1] =  "  \\  \\    "
+chevron_right.contents[2] =  "   \\  \\   "
+chevron_right.contents[3] =  "    〉 /  "
+chevron_right.contents[4] =  "   /  /   "
+chevron_right.contents[5] =  "  /__/    "
+BlockLetterMap[:chevron_right] = chevron_right
+
+chevron_left = NewBlockLetter.new
+chevron_left.contents[0] =  "     ___  "
+chevron_left.contents[1] =  "    /  /  "
+chevron_left.contents[2] =  "   /  /   "
+chevron_left.contents[3] =  "  \\ 〈    "
+chevron_left.contents[4] =  "   \\  \\   "
+chevron_left.contents[5] =  "    \\__\\  "
+BlockLetterMap[:chevron_left] = chevron_left
+          
 percent = NewBlockLetter.new
 percent.contents[0] =  "  ___   ___    "
 percent.contents[1] =  "  \\__\\ /  /    "
