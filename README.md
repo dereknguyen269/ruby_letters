@@ -1,8 +1,9 @@
-## Ruby_Letters
+# Ruby_Letters
 
+## Getting Started
 ```bash
   cd ruby_letters
-  ruby letters "Hello World"
+  ruby letters.rb "Hello World"
 ```
 ![](./demo.png)
 
