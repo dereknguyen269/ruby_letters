@@ -26,6 +26,7 @@ def draw(str)
         when "-" then key = :hyphen
         when "+" then key = :plus
         when "_" then key = :underscore
+        when "@" then key = :at
         when "#" then key = :hash
         when "?" then key = :question
         when "$" then key = :dollar
@@ -409,6 +410,15 @@ percent.contents[4] =  "    /  / ___   "
 percent.contents[5] =  "   /__/  \\__\\  "
 BlockLetterMap[:percent] = percent
 
+at = NewBlockLetter.new
+at.contents[0] = "    ______    "
+at.contents[1] = "   /  __  \\   "
+at.contents[2] = "  |  /  |  |  "
+at.contents[3] = "  |  |  /  |  "
+at.contents[4] = "  |  \\____/   "
+at.contents[5] = "   \\______|   "
+BlockLetterMap[:at] = at
+          
 open_parenthesis = NewBlockLetter.new
 open_parenthesis.contents[0] = "    /   "
 open_parenthesis.contents[1] = "   /    "
