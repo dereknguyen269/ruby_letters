@@ -30,6 +30,9 @@ def draw(str)
         when "%" then key = :percent
         when "*" then key = :star
         when "^" then key = :caret
+        when ">" then key = :chevron_right
+        when "<" then key = :chevron_left
+        when "%" then key = :percent
         else          key = str[x].downcase.to_sym
       end
 
@@ -356,6 +359,33 @@ dollar.contents[3] = " \\__ \\  "
 dollar.contents[4] = " (   /  "
 dollar.contents[5] = "  |_|   "
 BlockLetterMap[:dollar] = dollar
+          
+chevron_right = NewBlockLetter.new
+chevron_right.contents[0] =  "  ___     "
+chevron_right.contents[1] =  "  \\  \\    "
+chevron_right.contents[2] =  "   \\  \\   "
+chevron_right.contents[3] =  "    〉 /  "
+chevron_right.contents[4] =  "   /  /   "
+chevron_right.contents[5] =  "  /__/    "
+BlockLetterMap[:chevron_right] = chevron_right
+
+chevron_left = NewBlockLetter.new
+chevron_left.contents[0] =  "     ___  "
+chevron_left.contents[1] =  "    /  /  "
+chevron_left.contents[2] =  "   /  /   "
+chevron_left.contents[3] =  "  \\ 〈    "
+chevron_left.contents[4] =  "   \\  \\   "
+chevron_left.contents[5] =  "    \\__\\  "
+BlockLetterMap[:chevron_left] = chevron_left
+          
+percent = NewBlockLetter.new
+percent.contents[0] =  "  ___   ___    "
+percent.contents[1] =  "  \\__\\ /  /    "
+percent.contents[2] =  "      /  /     "
+percent.contents[3] =  "     /  /      "
+percent.contents[4] =  "    /  / ___   "
+percent.contents[5] =  "   /__/  \\__\\  "
+BlockLetterMap[:percent] = percent
 
 if ARGV.count.zero?
   str = "Ruby Letters"
