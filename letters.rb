@@ -385,20 +385,20 @@ BlockLetterMap[:dollar] = dollar
 
 chevron_right = NewBlockLetter.new
 chevron_right.contents[0] =  "  ___     "
-chevron_right.contents[1] =  "  \\  \\    "
-chevron_right.contents[2] =  "   \\  \\   "
-chevron_right.contents[3] =  "    〉 /  "
+chevron_right.contents[1] =  "  \\  \\  "
+chevron_right.contents[2] =  "   \\  \\ "
+chevron_right.contents[3] =  "    〉 〉  "
 chevron_right.contents[4] =  "   /  /   "
 chevron_right.contents[5] =  "  /__/    "
 BlockLetterMap[:chevron_right] = chevron_right
 
 chevron_left = NewBlockLetter.new
-chevron_left.contents[0] =  "     ___  "
-chevron_left.contents[1] =  "    /  /  "
-chevron_left.contents[2] =  "   /  /   "
-chevron_left.contents[3] =  "  \\ 〈    "
-chevron_left.contents[4] =  "   \\  \\   "
-chevron_left.contents[5] =  "    \\__\\  "
+chevron_left.contents[0] =  "     ____  "
+chevron_left.contents[1] =  "    /   /  "
+chevron_left.contents[2] =  "   /   /   "
+chevron_left.contents[3] =  " 〈  〈    "
+chevron_left.contents[4] =  "   \\   \\   "
+chevron_left.contents[5] =  "    \\___\\  "
 BlockLetterMap[:chevron_left] = chevron_left
 
 percent = NewBlockLetter.new
@@ -418,7 +418,7 @@ at.contents[3] = "  |  |  /  |  "
 at.contents[4] = "  |  \\____/   "
 at.contents[5] = "   \\______|   "
 BlockLetterMap[:at] = at
-          
+
 open_parenthesis = NewBlockLetter.new
 open_parenthesis.contents[0] = "    /   "
 open_parenthesis.contents[1] = "   /    "
