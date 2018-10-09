@@ -18,7 +18,6 @@ def draw(str)
   while y <= 5 do
     text = ''
     (0...count).each do |x|
-
       case str[x]
         when " " then key = :space
         when "!" then key = :exclamation
@@ -294,12 +293,12 @@ space.contents[5] =  "      "
 BlockLetterMap[:space] = space
 
 exclamation = NewBlockLetter.new
-exclamation.contents[0] =  "______ "
-exclamation.contents[1] =  "\\    / "
-exclamation.contents[2] =  " \\  /  "
-exclamation.contents[3] =  "  \\/   "
-exclamation.contents[4] =  "       "
-exclamation.contents[5] =  "  []   "
+exclamation.contents[0] =  "  _   "
+exclamation.contents[1] =  " | |  "
+exclamation.contents[2] =  " | |  "
+exclamation.contents[3] =  " | |  "
+exclamation.contents[4] =  "  -   "
+exclamation.contents[5] =  " [x]  "
 BlockLetterMap[:exclamation] = exclamation
 
 period = NewBlockLetter.new
