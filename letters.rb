@@ -359,7 +359,7 @@ percent.contents[5] =  "   /__/  \\__\\  "
 BlockLetterMap[:percent] = percent
 
 if ARGV.count.zero?
-  str = "Ruby Letters %"
+  str = "Ruby Letters"
   draw(str)
 else
   ARGV.each {|input| draw(input) }
