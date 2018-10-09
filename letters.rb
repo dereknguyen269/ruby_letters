@@ -300,8 +300,8 @@ BlockLetterMap[:exclamation] = exclamation
 hyphen = NewBlockLetter.new
 hyphen.contents[0] =  "        "
 hyphen.contents[1] =  "        "
-hyphen.contents[2] =  "======= "
-hyphen.contents[3] =  "======= "
+hyphen.contents[2] =  " ______ "
+hyphen.contents[3] =  "|______|"
 hyphen.contents[4] =  "        "
 hyphen.contents[5] =  "        "
 BlockLetterMap[:hyphen] = hyphen
