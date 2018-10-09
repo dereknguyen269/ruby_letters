@@ -24,6 +24,7 @@ def draw(str)
         when "!" then key = :exclamation
         when "." then key = :period
         when "-" then key = :hyphen
+        when "+" then key = :plus
         when "_" then key = :underscore
         when "#" then key = :hash
         when "?" then key = :question
@@ -317,6 +318,15 @@ hyphen.contents[3] =  "|______|"
 hyphen.contents[4] =  "        "
 hyphen.contents[5] =  "        "
 BlockLetterMap[:hyphen] = hyphen
+
+plus = NewBlockLetter.new
+plus.contents[0] =  "          "
+plus.contents[1] =  "    __    "
+plus.contents[2] =  "  _|  |_  "
+plus.contents[3] =  " |__  __| "
+plus.contents[4] =  "   |__|   "
+plus.contents[5] =  "          "
+BlockLetterMap[:plus] = plus
 
 underscore = NewBlockLetter.new
 underscore.contents[0] =  "        "
