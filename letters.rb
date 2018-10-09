@@ -42,6 +42,7 @@ def draw(str)
         when "[" then key = :opening_braces
         when "]" then key = :closed_braces
         when "¬" then key = :not_sign
+        when "Ñ" then key = :ñ
         else          key = str[x].downcase.to_sym
       end
 
@@ -494,6 +495,7 @@ BlockLetterMap[:not_sign] = not_sign
 ñ.contents[4] =  "| | \\ \\ | "
 ñ.contents[5] =  "|_|  \\__| "
 BlockLetterMap[:ñ] = ñ
+
 if ARGV.count.zero?
   str = "Ruby Letters"
   draw(str)
