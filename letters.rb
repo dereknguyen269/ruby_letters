@@ -24,6 +24,7 @@ def draw(str)
         when "." then key = :period
         when "-" then key = :hyphen
         when "+" then key = :plus
+		    when "=" then key = :equal
         when "_" then key = :underscore
         when "@" then key = :at
         when "#" then key = :hash
@@ -43,6 +44,8 @@ def draw(str)
         when "]" then key = :closed_braces
         when "¬" then key = :not_sign
         when "Ñ" then key = :ñ
+        when "/" then key = :slash
+        when "\\" then key = :backslash
         else          key = str[x].downcase.to_sym
       end
 
@@ -334,6 +337,15 @@ plus.contents[4] =  "   |__|   "
 plus.contents[5] =  "          "
 BlockLetterMap[:plus] = plus
 
+equal = NewBlockLetter.new
+equal.contents[0] =  "          "
+equal.contents[1] =  "          "
+equal.contents[2] =  " ________ "
+equal.contents[3] =  " ________ "
+equal.contents[4] =  "          "
+equal.contents[5] =  "          "
+BlockLetterMap[:equal] = equal
+
 underscore = NewBlockLetter.new
 underscore.contents[0] =  "        "
 underscore.contents[1] =  "        "
@@ -495,6 +507,24 @@ BlockLetterMap[:not_sign] = not_sign
 ñ.contents[4] =  "| | \\ \\ | "
 ñ.contents[5] =  "|_|  \\__| "
 BlockLetterMap[:ñ] = ñ
+          
+slash = NewBlockLetter.new
+slash.contents[0] = "     __ "
+slash.contents[1] = "    / / "
+slash.contents[2] = "   / /  "
+slash.contents[3] = "  / /   "
+slash.contents[4] = " / /    "
+slash.contents[5] = "/_/     "
+BlockLetterMap[:slash] = slash
+
+backslash = NewBlockLetter.new
+backslash.contents[0] = "__      "
+backslash.contents[1] = "\\ \\     "
+backslash.contents[2] = " \\ \\    "
+backslash.contents[3] = "  \\ \\   "
+backslash.contents[4] = "   \\ \\  "
+backslash.contents[5] = "    \\_\\ "
+BlockLetterMap[:backslash] = backslash
 
 if ARGV.count.zero?
   str = "Ruby Letters"
