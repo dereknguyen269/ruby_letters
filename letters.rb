@@ -24,7 +24,7 @@ def draw(str)
         when "." then key = :period
         when "-" then key = :hyphen
         when "+" then key = :plus
-		when "=" then key = :equal
+		    when "=" then key = :equal
         when "_" then key = :underscore
         when "@" then key = :at
         when "#" then key = :hash
@@ -40,6 +40,10 @@ def draw(str)
         when ")" then key = :closed_parenthesis
         when "{" then key = :opening_curly_braces
         when "}" then key = :closed_curly_braces
+        when "[" then key = :opening_braces
+        when "]" then key = :closed_braces
+        when "¬" then key = :not_sign
+        when "Ñ" then key = :ñ
         when "/" then key = :slash
         when "\\" then key = :backslash
         else          key = str[x].downcase.to_sym
@@ -468,6 +472,42 @@ closed_curly_braces.contents[4] = "    |  "
 closed_curly_braces.contents[5] = "   -   "
 BlockLetterMap[:closed_curly_braces] = closed_curly_braces
 
+opening_braces = NewBlockLetter.new
+opening_braces.contents[0] = " __ "
+opening_braces.contents[1] = "|   "
+opening_braces.contents[2] = "|   "
+opening_braces.contents[3] = "|   "
+opening_braces.contents[4] = "|   "
+opening_braces.contents[5] = "|__ "
+BlockLetterMap[:opening_braces] = opening_braces
+
+closed_braces = NewBlockLetter.new
+closed_braces.contents[0] = " __ "
+closed_braces.contents[1] = "   |"
+closed_braces.contents[2] = "   |"
+closed_braces.contents[3] = "   |"
+closed_braces.contents[4] = "   |"
+closed_braces.contents[5] = " __|"
+BlockLetterMap[:closed_braces] = closed_braces
+
+not_sign = NewBlockLetter.new
+not_sign.contents[0] = "        "
+not_sign.contents[1] = "        "
+not_sign.contents[2] = " ______ "
+not_sign.contents[3] = "|_____ |"
+not_sign.contents[4] = "     |_|"
+not_sign.contents[5] = "        "
+BlockLetterMap[:not_sign] = not_sign
+
+ñ = NewBlockLetter.new
+ñ.contents[0] =  " __━━━━_  "
+ñ.contents[1] =  "|  \\  | | "
+ñ.contents[2] =  "| \\ \\ | | "
+ñ.contents[3] =  "| |\\ \\| | "
+ñ.contents[4] =  "| | \\ \\ | "
+ñ.contents[5] =  "|_|  \\__| "
+BlockLetterMap[:ñ] = ñ
+          
 slash = NewBlockLetter.new
 slash.contents[0] = "     __ "
 slash.contents[1] = "    / / "
