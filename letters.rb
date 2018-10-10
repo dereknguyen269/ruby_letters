@@ -39,6 +39,8 @@ def draw(str)
         when ")" then key = :closed_parenthesis
         when "{" then key = :opening_curly_braces
         when "}" then key = :closed_curly_braces
+        when "/" then key = :slash
+        when "\\" then key = :backslash
         else          key = str[x].downcase.to_sym
       end
 
@@ -456,6 +458,23 @@ closed_curly_braces.contents[4] = "    |  "
 closed_curly_braces.contents[5] = "   -   "
 BlockLetterMap[:closed_curly_braces] = closed_curly_braces
 
+slash = NewBlockLetter.new
+slash.contents[0] = "     __ "
+slash.contents[1] = "    / / "
+slash.contents[2] = "   / /  "
+slash.contents[3] = "  / /   "
+slash.contents[4] = " / /    "
+slash.contents[5] = "/_/     "
+BlockLetterMap[:slash] = slash
+
+backslash = NewBlockLetter.new
+backslash.contents[0] = "__      "
+backslash.contents[1] = "\\ \\     "
+backslash.contents[2] = " \\ \\    "
+backslash.contents[3] = "  \\ \\   "
+backslash.contents[4] = "   \\ \\  "
+backslash.contents[5] = "    \\_\\ "
+BlockLetterMap[:backslash] = backslash
 
 if ARGV.count.zero?
   str = "Ruby Letters"
