@@ -46,6 +46,7 @@ def draw(str)
         when "Ñ" then key = :ñ
         when "/" then key = :slash
         when "\\" then key = :backslash
+        when "|" then key = :pipe
         else          key = str[x].downcase.to_sym
       end
 
@@ -525,6 +526,15 @@ backslash.contents[3] = "  \\ \\   "
 backslash.contents[4] = "   \\ \\  "
 backslash.contents[5] = "    \\_\\ "
 BlockLetterMap[:backslash] = backslash
+
+pipe = NewBlockLetter.new
+pipe.contents[0] = "    _     "
+pipe.contents[1] = "   | |    "
+pipe.contents[2] = "   | |    "
+pipe.contents[3] = "   | |    "
+pipe.contents[4] = "   | |    "
+pipe.contents[5] = "   |_|    "
+BlockLetterMap[:pipe] = pipe
 
 if ARGV.count.zero?
   str = "Ruby Letters"
