@@ -24,7 +24,7 @@ def draw(str)
         when "." then key = :period
         when "-" then key = :hyphen
         when "+" then key = :plus
-		    when "=" then key = :equal
+	when "=" then key = :equal
         when "_" then key = :underscore
         when "@" then key = :at
         when "#" then key = :hash
@@ -47,6 +47,9 @@ def draw(str)
         when "/" then key = :slash
         when "\\" then key = :backslash
         when "|" then key = :pipe
+	when "¡" then key = :exclamation_inv
+	when ":" then key = :colon
+	when ";" then key = :semicolon
         else          key = str[x].downcase.to_sym
       end
 
@@ -359,8 +362,8 @@ BlockLetterMap[:underscore] = underscore
 hash = NewBlockLetter.new
 hash.contents[0] =  "        "
 hash.contents[1] =  " || ||  "
-hash.contents[2] =  "=|| ||= "
-hash.contents[3] =  "=|| ||= "
+hash.contents[2] =  "=||=||= "
+hash.contents[3] =  "=||=||= "
 hash.contents[4] =  " || ||  "
 hash.contents[5] =  "        "
 BlockLetterMap[:hash] = hash
@@ -535,6 +538,33 @@ pipe.contents[3] = "   | |    "
 pipe.contents[4] = "   | |    "
 pipe.contents[5] = "   |_|    "
 BlockLetterMap[:pipe] = pipe
+		
+exclamation_inv = NewBlockLetter.new
+exclamation_inv.contents[0] =  " [x]  "
+exclamation_inv.contents[1] =  "  _   "
+exclamation_inv.contents[2] =  " | |  "
+exclamation_inv.contents[3] =  " | |  "
+exclamation_inv.contents[4] =  " |_|  "
+exclamation_inv.contents[5] =  "      "
+BlockLetterMap[:exclamation] = exclamation_inv
+		
+colon = NewBlockLetter.new
+colon.contents[0] = "        "
+colon.contents[1] = "   __   "
+colon.contents[2] = "  |__|  "
+colon.contents[3] = "   __   "
+colon.contents[4] = "  |__|  "
+colon.contents[5] = "        "
+BlockLetterMap[:period] = colon
+
+semicolon = NewBlockLetter.new
+semicolon.contents[0] = "        "
+semicolon.contents[1] = "   __   "
+semicolon.contents[2] = "  |__|  "
+semicolon.contents[3] = "   __   "
+semicolon.contents[4] = "  |  |  "
+semicolon.contents[5] = "  /_/   "
+BlockLetterMap[:period] = semicolon
 
 if ARGV.count.zero?
   str = "Ruby Letters"
