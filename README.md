@@ -3,7 +3,7 @@
 ## Getting Started
 ```bash
   cd ruby_letters
-  ruby letters.rb "Hello World"
+  ruby ruby_letters.rb "Hello World"
 ```
 ![](./demo.png)
 
