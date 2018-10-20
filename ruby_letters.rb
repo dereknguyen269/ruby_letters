@@ -4,6 +4,7 @@
 
 require './block_letters'
 require './letters'
+require 'colorized_string'
 
 class RubyLetters
   def initialize(input_string)
@@ -13,13 +14,16 @@ class RubyLetters
 
   def render
     length = @input_string.size
+    colors = ColorizedString.colors
+    colors.shift
+    color = colors.sample
     y = 0
     while y <= 5 do
       text = ''
       (0...length).each do |x|
         text += "#{@letters[get_key(x)].contents[y]}"
       end
-      STDERR.puts text
+      STDERR.puts ColorizedString[text].colorize(:color => color, :background => :black)
       y += 1
     end
   end
