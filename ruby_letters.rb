@@ -10,19 +10,20 @@ class RubyLetters
   def initialize(input_string)
     @input_string = input_string
     @letters = Letters.new.all
+    @colors = []
   end
 
   def render
     length = @input_string.size
-    colors = ColorizedString.colors
-    colors.shift
-    color = colors.sample
+    @colorized = ColorizedString.colors
+    @colorized.shift
     y = 0
     while y <= 5 do
       text = ''
       (0...length).each do |x|
         text += "#{@letters[get_key(x)].contents[y]}"
       end
+      color = unique_color
       STDERR.puts ColorizedString[text].colorize(:color => color, :background => :black)
       y += 1
     end
@@ -66,6 +67,16 @@ class RubyLetters
     else          key = @input_string[character].downcase.to_sym
     end
     key
+  end
+
+  def unique_color
+    color = @colorized.sample
+    if @colors.include?(color)
+      unique_color
+    else
+      @colors << color
+      color
+    end
   end
 end
 
