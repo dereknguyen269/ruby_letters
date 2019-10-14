@@ -8,4 +8,5 @@
 ![](./demo.png)
 
 ## Contributors
-[Athyk]('https://www.github.com/Athyk')
+
+[![](https://contributors-img.firebaseapp.com/image?repo=dereknguyen269/ruby_letters)](https://github.com/dereknguyen269/ruby_letters/graphs/contributors)
