@@ -5,6 +5,7 @@
 require './block_letters'
 require './letters'
 require 'colorized_string'
+require 'dotenv/load'
 
 class RubyLetters
   def initialize(input_string)
@@ -23,8 +24,15 @@ class RubyLetters
       (0...length).each do |x|
         text += "#{@letters[get_key(x)].contents[y]}"
       end
-      color = unique_color
-      STDERR.puts ColorizedString[text].colorize(:color => color, :background => :black)
+			if ENV['color'].to_s.empty?
+				text_color = unique_color
+				bg_color = :black
+			else
+				customize_color = ENV['color'].split(',')
+				text_color = customize_color[0] || :white
+				bg_color = customize_color[1] || :black
+			end
+			STDERR.puts ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
       y += 1
     end
   end

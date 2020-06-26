@@ -2,12 +2,14 @@ GEM
   remote: http://rubygems.org/
   specs:
     colorize (0.8.1)
+    dotenv (2.7.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   colorize
+  dotenv (~> 2.7, >= 2.7.5)
 
 BUNDLED WITH
    1.16.6
