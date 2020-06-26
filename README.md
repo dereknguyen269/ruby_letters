@@ -8,9 +8,11 @@
 With customize color
 
 ```bash
-	cd ruby_letters
-  color=blue ruby_letters.rb "Hello World"
+  cd ruby_letters
+  color=blue,white ruby_letters.rb "Hello World"
 ```
++ blue : text color
++ white : background color
 ![](./demo.png)
 
 ## Contributors
