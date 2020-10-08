@@ -3,6 +3,7 @@ GEM
   specs:
     colorize (0.8.1)
     dotenv (2.7.5)
+    rainbow_printer (0.1.0)
 
 PLATFORMS
   ruby
@@ -10,6 +11,7 @@ PLATFORMS
 DEPENDENCIES
   colorize
   dotenv (~> 2.7, >= 2.7.5)
+  rainbow_printer
 
 BUNDLED WITH
    1.16.6
