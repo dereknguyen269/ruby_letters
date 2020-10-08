@@ -9,11 +9,19 @@ With customize color
 
 ```bash
   cd ruby_letters
-  color=blue,white ruby_letters.rb "Hello World"
+  color=blue,white ruby ruby_letters.rb "Hello World"
 ```
 + blue : text color
 + white : background color
 ![](./demo.png)
+
+With rainbow colors
+
+```bash
+  cd ruby_letters
+  color=rainbow ruby ruby_letters.rb "Ruby letters"
+```
+![](./rainbow.png)
 
 ## Contributors
 
