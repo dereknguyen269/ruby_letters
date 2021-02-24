@@ -29,16 +29,16 @@ class RubyLetters
 				text_color = unique_color
 				bg_color = :black
 			    STDERR.puts ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
-            else
-                if ENV['color'] == 'rainbow'
-                  rb_puts text
-                else
-				  customize_color = ENV['color'].split(',')
-				  text_color = customize_color[0] || :white
-				  bg_color = customize_color[1] || :black
-			      STDERR.puts ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
-                end
-            end
+      else
+        if ENV['color'] == 'rainbow'
+          rb_puts text
+        else
+          customize_color = ENV['color'].split(',')
+          text_color = customize_color[0] || :white
+          bg_color = customize_color[1] || :black
+          STDERR.puts ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
+        end
+      end
       y += 1
     end
   end
