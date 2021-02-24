@@ -28,7 +28,8 @@ class RubyLetters
 			if ENV['color'].to_s.empty?
 				text_color = unique_color
 				bg_color = :black
-			    STDERR.puts ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
+        content = ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
+        STDERR.puts content
       else
         if ENV['color'] == 'rainbow'
           rb_puts text
