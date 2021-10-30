@@ -1,4 +1,4 @@
-# Ruby_Letters
+# Ruby Letters
 
 ## Getting Started
 ```bash
