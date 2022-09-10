@@ -20,12 +20,20 @@ class RubyLetters
     @colorized = ColorizedString.colors
     @colorized.shift
     y = 0
+    if ENV['export']
+      # Clear file content before write
+      file_path = ENV['file_path'] ? ENV['file_path'] : 'tmp/output.txt'
+      File.open(file_path, 'w') {|file| file.truncate(0) }
+    end
     while y <= 5 do
       text = ''
       (0...length).each do |x|
         text += "#{@letters[get_key(x)].contents[y]}"
       end
-			if ENV['color'].to_s.empty?
+      if ENV['export']
+        # Write text to file txt
+        File.write(file_path, "#{text}\n", mode: 'a')
+			elsif ENV['color'].to_s.empty?
 				text_color = unique_color
 				bg_color = :black
         content = ColorizedString[text].colorize(:color => text_color.to_sym, :background => bg_color.to_sym)
