@@ -513,6 +513,15 @@ class Letters
     semicolon.contents[5] = "  /_/   "
     @block_letters_map[:period] = semicolon
 
+    zero = BlockLetters.new
+    zero.contents[0] =  " _______  "
+    zero.contents[1] =  "|  ___  | "
+    zero.contents[2] =  "| |   | | "
+    zero.contents[3] =  "| |   | | "
+    zero.contents[4] =  "| |___| | "
+    zero.contents[5] =  "|_______| "
+    @block_letters_map[:"0"] = zero
+
     @block_letters_map
   end
 end
