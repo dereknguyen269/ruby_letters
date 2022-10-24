@@ -522,6 +522,15 @@ class Letters
     zero.contents[5] =  "|_______| "
     @block_letters_map[:"0"] = zero
 
+    one = BlockLetters.new
+    one.contents[0] =  "   __   "
+    one.contents[1] =  "  /  |  "
+    one.contents[2] =  "   | |  "
+    one.contents[3] =  "   | |  "
+    one.contents[4] =  "   | |  "
+    one.contents[5] =  "   |_|  "
+    @block_letters_map[:"1"] = one
+
     @block_letters_map
   end
 end
